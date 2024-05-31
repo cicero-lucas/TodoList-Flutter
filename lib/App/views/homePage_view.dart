@@ -67,9 +67,31 @@ class HomePage_State extends State<HomePageView>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: Column(
+          children: [
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text("Inicio"),
+              onTap: (){
+                Navigator.of(context).pushReplacementNamed("/home");
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.exit_to_app),
+              title: Text("Sair"),
+              onTap: (){
+                Navigator.of(context).pushReplacementNamed("/");
+              },
+            ),
+          ],
+          
+          ),
+      ),
       appBar: AppBar(
         title: Text("TudoList",
         style: TextStyle(fontWeight: FontWeight.w800,color: Colors.white),
+
       ),
       backgroundColor: Colors.orange,
     ),
